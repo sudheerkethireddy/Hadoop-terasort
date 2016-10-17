@@ -1,4 +1,4 @@
-package com.project.bigdata.group3.teragen;
+package com.project.bigdata.group3.datagen;
 
 import java.util.UUID;
 
