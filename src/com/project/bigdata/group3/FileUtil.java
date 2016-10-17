@@ -30,25 +30,22 @@ public class FileUtil {
 	{
 		createFile(filepath,filename);
 		bufferWriter = new BufferedWriter(new FileWriter(file));
-		double bytes = 0.0;
+		
 		double kiloBytes = 0.0;
 		double megaBytes = 0.0;
 		double gigaBytes = 0.0;
-		do
-		{
-			bytes = file.length()/1024;
-			kiloBytes = bytes/1024;
+		while(gigaBytes<=10)
+		{	 
+			kiloBytes = file.length()/1024;
 			megaBytes = kiloBytes/1024;
 			gigaBytes = megaBytes/1024;	
-			if(gigaBytes>=8)
-				System.out.println("gigabyte="+gigaBytes);
-			bufferWriter.write(returnNLinesGeneratedString(200));
+			bufferWriter.write(returnNLinesGeneratedString(1000));
 			bufferWriter.newLine();
-		}while(gigaBytes<=10);
+		}
 
 
 	}
-	
+
 	/**
 	 * This util method helps us write n lines at a time to file
 	 * as File I/O is bottlenock for any application
@@ -69,5 +66,5 @@ public class FileUtil {
 		}
 		return s.toString();
 	}
-	
+
 }
